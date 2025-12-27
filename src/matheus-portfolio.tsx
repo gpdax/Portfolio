@@ -127,9 +127,9 @@ export default function Portfolio() {
           <ul className="list-disc pl-6 space-y-2">
             <li><strong>Linguagens:</strong> Python, Java, PHP, JavaScript</li>
             <li><strong>Frontend:</strong> HTML, CSS, JavaScript, React, Vite</li>
-            <li><strong>Backend:</strong> Flask, PHP</li>
+            <li><strong>Frameworks:</strong> Django, React, Vue</li>
             <li><strong>Bancos de Dados:</strong> MySQL, PostgreSQL</li>
-            <li><strong>Dados:</strong> Pandas, NumPy, Matplotlib</li>
+            <li><strong>Bibliotecas:</strong> Pandas, NumPy, Matplotlib</li>
             <li><strong>Versionamento:</strong> Git, GitHub</li>
             <li><strong>Ambiente:</strong> Node.js, npm</li>
             <li><strong>Deploy:</strong> Docker</li>
