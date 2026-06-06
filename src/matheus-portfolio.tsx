@@ -6,7 +6,6 @@ export default function Portfolio() {
   const [mounted, setMounted] = useState(false);
   const [dark, setDark] = useState(false);
 
-  // Detecta tema ao carregar
   useEffect(() => {
     const timer = setTimeout(() => {
       setMounted(true);
@@ -24,7 +23,6 @@ export default function Portfolio() {
     return () => clearTimeout(timer);
   }, []);
 
-  // Atualiza tema no <html> e localStorage
   useEffect(() => {
     if (!mounted) return;
 
@@ -56,7 +54,10 @@ export default function Portfolio() {
           <div className="text-center">
             <h1 className="text-4xl font-bold">Matheus Pais de Almeida</h1>
             <p className="text-xl mt-2">
-              Desenvolvedor de Software | Python | Java | Dados | Interesse em Frontend e Backend
+            Desenvolvedor Frontend |React, JavaScript, Node.js          
+            </p>
+            <p className="text-sm opacity-70 mt-1">
+              Londrina - PR • Disponível para oportunidades remotas
             </p>
           </div>
 
@@ -76,23 +77,19 @@ export default function Portfolio() {
       <nav className="flex justify-center gap-6 bg-white dark:bg-gray-800 shadow py-4 border-b dark:border-gray-700 font-medium">
         {[
           ["Sobre", "#sobre"],
+          ["Objetivo", "#objetivo"],
           ["Habilidades", "#habilidades"],
           ["Projetos", "#projetos"],
-          ["Certificações", "#certificacoes"],
+          ["Formação", "#desenvolvimento"],
           ["Timeline", "#timeline"],
           ["Contato", "#contato"],
         ].map(([label, link], i) => (
-          <a
-            key={i}
-            href={link}
-            className="hover:text-blue-600 dark:hover:text-blue-400 transition"
-          >
+          <a key={i} href={link} className="hover:text-blue-600 dark:hover:text-blue-400 transition">
             {label}
           </a>
         ))}
       </nav>
 
-      {/* MAIN */}
       <main className="max-w-4xl mx-auto p-6">
 
         {/* SOBRE */}
@@ -105,13 +102,30 @@ export default function Portfolio() {
         >
           <h2 className="text-2xl font-bold mb-3">Sobre mim</h2>
           <p>
-            Sou recém-graduado em Ciência da Computação pela UniFil e estou em início de carreira
-            na área de desenvolvimento de software. Durante a graduação, tive contato com
-            desenvolvimento de aplicações, análise de dados e programação utilizando
-            Python, Java e PHP. Atualmente, estou focado em aprender e aprimorar meus conhecimentos
-            em <strong>Frontend</strong>, estudando <strong>HTML, CSS, JavaScript</strong> e
-            o framework <strong>React</strong>, buscando criar interfaces simples, modernas
-            e responsivas, enquanto continuo evoluindo boas práticas de programação.
+            Sou desenvolvedor de software formado em Ciência da Computação pela UniFil,
+            com foco em desenvolvimento web utilizando JavaScript e React.
+
+          Atualmente, desenvolvo interfaces web modernas e interativas, aplicando JavaScript,
+          consumo de APIs e boas práticas de frontend.
+
+          Busco oportunidades como desenvolvedor Frontend ou Full Stack Júnior,
+          onde posso aplicar e evoluir minhas habilidades em JavaScript, React e desenvolvimento web.
+          </p>
+        </motion.section>
+
+        {/* OBJETIVO */}
+        <motion.section
+          id="objetivo"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="bg-white dark:bg-gray-800 border dark:border-gray-700 p-6 rounded-xl shadow mb-8"
+        >
+          <h2 className="text-2xl font-bold mb-3">Objetivo</h2>
+          <p>
+           Busco minha primeira oportunidade como desenvolvedor frontend júnior,
+          com foco em JavaScript, aplicando conhecimentos em manipulação de DOM,
+          lógica de programação e desenvolvimento de interfaces interativas,
+          enquanto evoluo continuamente e contribuo com soluções eficientes.
           </p>
         </motion.section>
 
@@ -120,19 +134,16 @@ export default function Portfolio() {
           id="habilidades"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
           className="bg-white dark:bg-gray-800 border dark:border-gray-700 p-6 rounded-xl shadow mb-8"
         >
           <h2 className="text-2xl font-bold mb-3">Habilidades</h2>
-          <ul className="list-disc pl-6 space-y-2">
-            <li><strong>Linguagens:</strong> Python, Java, PHP, JavaScript</li>
-            <li><strong>Frontend:</strong> HTML, CSS, JavaScript, React, Vite</li>
-            <li><strong>Frameworks:</strong> Django, React, Vue</li>
-            <li><strong>Bancos de Dados:</strong> MySQL, PostgreSQL</li>
-            <li><strong>Bibliotecas:</strong> Pandas, NumPy, Matplotlib</li>
-            <li><strong>Versionamento:</strong> Git, GitHub</li>
-            <li><strong>Ambiente:</strong> Node.js, npm</li>
-            <li><strong>Deploy:</strong> Docker</li>
+          <ul className="space-y-2">
+            <li><strong>Linguagens:</strong> Python, Java, JavaScript</li>
+            <li><strong>Frontend:</strong> HTML, CSS, React, Vite</li>
+            <li><strong>Backend:</strong> Django, PHP</li>
+            <li><strong>Banco de Dados:</strong> MySQL, PostgreSQL</li>
+            <li><strong>Dados:</strong> Pandas, NumPy, Matplotlib</li>
+            <li><strong>Ferramentas:</strong> Git, GitHub, Docker, Node.js</li>
           </ul>
         </motion.section>
 
@@ -141,7 +152,6 @@ export default function Portfolio() {
           id="projetos"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
           className="bg-white dark:bg-gray-800 border dark:border-gray-700 p-6 rounded-xl shadow mb-8"
         >
           <h2 className="text-2xl font-bold mb-4">Projetos</h2>
@@ -150,19 +160,28 @@ export default function Portfolio() {
             {[
               {
                 nome: "Easy Chess",
-                desc: "Jogo de xadrez 2D em Python com Pygame.",
-                link: "https://github.com/computacao-aplicada/link-RVsilva21",
+                desc: "Jogo de xadrez 2D com regras completas.",
+                tech: "Python • Pygame",
+                link: "#",
               },
               {
-                nome: "Deploy com Docker",
-                desc: "Projeto acadêmico focado em conteinerização e deploy.",
-                link: null,
+                nome: "Calculator",
+                desc: "Calculadora web interativa.",
+                tech: "HTML • CSS • JavaScript",
+                link: "#",
               },
               {
                 nome: "Portal de Compras",
-                desc: "Sistema web em PHP desenvolvido durante estágio.",
-                link: "https://github.com/Estagio-UniFil/Portal_de_Compras",
+                desc: "Sistema web desenvolvido em estágio.",
+                tech: "PHP • MySQL",
+                link: "#",
               },
+              {
+                nome: "Etch-a-Sketch",
+                desc: "Aplicação de desenho interativa.",
+                tech: "HTML • CSS • JavaScript",
+                link: "#",
+              }
             ].map((p, i) => (
               <motion.div
                 key={i}
@@ -170,36 +189,46 @@ export default function Portfolio() {
                 className="p-4 bg-gray-100 dark:bg-gray-700 rounded-xl shadow"
               >
                 <h3 className="text-lg font-bold">{p.nome}</h3>
-                <p className="text-sm mt-2 mb-3">{p.desc}</p>
+                <p className="text-sm mt-2">{p.desc}</p>
+                <p className="text-xs mt-1 opacity-70">{p.tech}</p>
 
-                {p.link && (
-                  <a
-                    href={p.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
-                  >
-                    Ver repositório no GitHub
-                  </a>
-                )}
+                <a
+                  href={p.link}
+                  className="text-sm text-blue-600 dark:text-blue-400 hover:underline mt-2 inline-block"
+                >
+                  Ver projeto
+                </a>
               </motion.div>
             ))}
           </div>
         </motion.section>
 
-        {/* CERTIFICAÇÕES */}
+        {/* FORMAÇÃO */}
         <motion.section
-          id="certificacoes"
+          id="desenvolvimento"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
           className="bg-white dark:bg-gray-800 border dark:border-gray-700 p-6 rounded-xl shadow mb-8"
         >
-          <h2 className="text-2xl font-bold mb-4">Certificações & Estudos</h2>
-          <ul className="list-disc pl-6 space-y-2">
-            <li><strong>Em andamento:</strong> The Odin Project — Foundations</li>
-            <li><strong>Planejado:</strong> The Odin Project — Full Stack JavaScript</li>
-          </ul>
+          <h2 className="text-2xl font-bold mb-4">Formação e Estudos</h2>
+
+          <ul className="list-disc pl-6 space-y-3">
+             <li>
+                <strong>Bacharelado em Ciência da Computação</strong> — UniFil (2025)             
+            </li>
+
+                <li>
+                <strong>The Odin Project — Foundations</strong>  
+                    <br />
+                      Formação prática em HTML, CSS, JavaScript e Git
+                      </li>
+
+                             <li>
+                              <strong>The Odin Project — Intermediate HTML & CSS</strong>  
+                                        <br />
+                          Em andamento (foco em layouts responsivos e boas práticas de CSS)
+                        </li>
+            </ul>
         </motion.section>
 
         {/* TIMELINE */}
@@ -207,15 +236,20 @@ export default function Portfolio() {
           id="timeline"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
           className="bg-white dark:bg-gray-800 border dark:border-gray-700 p-6 rounded-xl shadow mb-8"
         >
           <h2 className="text-2xl font-bold mb-3">Linha do Tempo</h2>
           <ul className="border-l-4 border-gray-400 dark:border-gray-600 pl-6 space-y-4">
-            <li><strong>2024:</strong> Sistemas web em PHP e estudos com Docker</li>
-            <li><strong>2025:</strong> Projetos acadêmicos em Python</li>
-            <li><strong>2025:</strong> Estágio e estudos em Frontend (React)</li>
-          </ul>
+            <li><strong>2024:</strong> Desenvolvimento web com PHP e Docker</li>
+
+            <li><strong>2025:</strong> Estágio em desenvolvimento</li>
+            <li><strong>2025:</strong> Bacharelado em Ciência da Computação — UniFil</li>
+            <li><strong>2025:</strong> Projetos com Python e dados</li>
+
+            <li><strong>2026:</strong> The Odin Project — Foundations (HTML, CSS, JavaScript e Git)</li>
+            <li><strong>2026:</strong> The Odin Project — Intermediate HTML & CSS (em andamento)</li>
+            <li><strong>2026:</strong> Foco em JavaScript (The Odin Project) e React em projetos pessoais</li>          
+            </ul>
         </motion.section>
 
         {/* CONTATO */}
@@ -223,53 +257,24 @@ export default function Portfolio() {
           id="contato"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
           className="bg-white dark:bg-gray-800 border dark:border-gray-700 p-6 rounded-xl shadow mb-8"
         >
           <h2 className="text-2xl font-bold mb-3">Contato</h2>
-          <p>
-            Email:
-            <a
-              className="text-blue-600 dark:text-blue-400 underline ml-1"
-              href="mailto:mathpdalmeida3@gmail.com"
-            >
-              mathpdalmeida3@gmail.com
-            </a>
-          </p>
-          <p>
-            LinkedIn:
-            <a
-              className="text-blue-600 dark:text-blue-400 underline ml-1"
-              href="https://linkedin.com/in/matheuspais0b22a2327"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              linkedin.com/in/matheuspais0b22a2327
-            </a>
-          </p>
-          <p>
-            GitHub:
-            <a
-              className="text-blue-600 dark:text-blue-400 underline ml-1"
-              href="https://github.com/gpdax"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              github.com/gpdax
-            </a>
-          </p>
+
+          <p>Email: <a className="text-blue-600 underline ml-1" href="mailto:mathpdalmeida3@gmail.com">mathpdalmeida3@gmail.com</a></p>
+          <p>LinkedIn: <a className="text-blue-600 underline ml-1" href="https://linkedin.com" target="_blank">Perfil</a></p>
+          <p>GitHub: <a className="text-blue-600 underline ml-1" href="https://github.com/gpdax" target="_blank">github.com/gpdax</a></p>
         </motion.section>
 
       </main>
 
       <footer className="text-center py-6 opacity-70 text-sm">
-        © 2025 Matheus Pais de Almeida — Portfólio em evolução
+        © 2026 Matheus Pais de Almeida
       </footer>
 
     </div>
   );
 }
-
 
 
 
