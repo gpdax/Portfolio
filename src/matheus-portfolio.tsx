@@ -162,26 +162,21 @@ export default function Portfolio() {
                 nome: "Easy Chess",
                 desc: "Jogo de xadrez 2D com regras completas.",
                 tech: "Python • Pygame",
-                link: "#",
+                link: "https://github.com/computacao-aplicada/link-RVsilva21",
               },
               {
-                nome: "Calculator",
+                nome: "Calculadora Web",
                 desc: "Calculadora web interativa.",
                 tech: "HTML • CSS • JavaScript",
-                link: "#",
-              },
-              {
-                nome: "Portal de Compras",
-                desc: "Sistema web desenvolvido em estágio.",
-                tech: "PHP • MySQL",
-                link: "#",
+                link: "https://gpdax.github.io/Calculator/",
               },
               {
                 nome: "Etch-a-Sketch",
                 desc: "Aplicação de desenho interativa.",
                 tech: "HTML • CSS • JavaScript",
-                link: "#",
-              }
+                link: "https://gpdax.github.io/Etch-A-Sketch/",
+              },
+              
             ].map((p, i) => (
               <motion.div
                 key={i}
